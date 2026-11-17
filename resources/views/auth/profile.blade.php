@@ -40,9 +40,24 @@
         <div class="card__head"><h3>Ubah Password</h3></div>
         <form method="POST" action="{{ route('profile.password') }}" class="card__body">
             @csrf @method('PUT')
-            <div class="mb-3"><label class="form-label" for="cur">Password saat ini</label><input id="cur" type="password" name="current_password" class="form-control" required autocomplete="current-password"></div>
-            <div class="mb-3"><label class="form-label" for="new">Password baru</label><input id="new" type="password" name="password" class="form-control" required minlength="8" autocomplete="new-password"></div>
-            <div class="mb-3"><label class="form-label" for="conf">Konfirmasi password baru</label><input id="conf" type="password" name="password_confirmation" class="form-control" required autocomplete="new-password"></div>
+            <div class="mb-3"><label class="form-label" for="cur">Password saat ini</label>
+                <div class="pw-field">
+                    <input id="cur" type="password" name="current_password" class="form-control" required autocomplete="current-password">
+                    <button type="button" class="pw-toggle" data-pw-toggle="cur" aria-label="Tampilkan password" aria-pressed="false"><x-icon name="eye" size="17" class="pw-toggle__show" /><x-icon name="eye-off" size="17" class="pw-toggle__hide" /></button>
+                </div>
+            </div>
+            <div class="mb-3"><label class="form-label" for="new">Password baru</label>
+                <div class="pw-field">
+                    <input id="new" type="password" name="password" class="form-control" required minlength="8" autocomplete="new-password">
+                    <button type="button" class="pw-toggle" data-pw-toggle="new" aria-label="Tampilkan password" aria-pressed="false"><x-icon name="eye" size="17" class="pw-toggle__show" /><x-icon name="eye-off" size="17" class="pw-toggle__hide" /></button>
+                </div>
+            </div>
+            <div class="mb-3"><label class="form-label" for="conf">Konfirmasi password baru</label>
+                <div class="pw-field">
+                    <input id="conf" type="password" name="password_confirmation" class="form-control" required autocomplete="new-password">
+                    <button type="button" class="pw-toggle" data-pw-toggle="conf" aria-label="Tampilkan password" aria-pressed="false"><x-icon name="eye" size="17" class="pw-toggle__show" /><x-icon name="eye-off" size="17" class="pw-toggle__hide" /></button>
+                </div>
+            </div>
             <button class="btn btn-primary"><x-icon name="shield" size="15" />Ubah Password</button>
         </form>
     </div>

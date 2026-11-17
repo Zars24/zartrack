@@ -2,12 +2,14 @@
 @section('title', 'Lacak Kiriman')
 @section('body')
 @include('public._nav')
-<main class="pub-container" style="padding-top:3.5rem;padding-bottom:3.5rem;max-width:900px">
-    <span class="eyebrow-sm">Public Tracking</span>
-    <h1 style="font-size:clamp(1.7rem,3vw,2.3rem);margin:.6rem 0 1rem">Lacak container Anda.</h1>
-    <p class="lead-sm">Masukkan tracking reference yang tertera pada dokumen pengiriman.</p>
+<main class="pub-container pub-page pub-page--narrow">
+    <div class="page-head">
+        <span class="eyebrow-sm">Public Tracking</span>
+        <h1>Lacak container Anda.</h1>
+        <p class="lead-sm">Masukkan tracking reference yang tertera pada dokumen pengiriman.</p>
+    </div>
 
-    <form method="GET" action="{{ route('public.track') }}" class="d-flex gap-2 mt-3" style="max-width:480px">
+    <form method="GET" action="{{ route('public.track') }}" class="d-flex gap-2" style="max-width:480px">
         <input name="ref" value="{{ $ref }}" class="form-control mono" placeholder="ZTXXXXXXXXXX" required aria-label="Tracking reference">
         <button class="btn btn-primary">Lacak</button>
     </form>

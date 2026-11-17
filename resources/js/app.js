@@ -2,6 +2,13 @@ import './bootstrap';
 import * as bootstrap from 'bootstrap';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+/* Leaflet resolves default marker images relative to the page URL unless told otherwise. */
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({ iconRetinaUrl: markerIcon2x, iconUrl: markerIcon, shadowUrl: markerShadow });
 
 window.bootstrap = bootstrap;
 window.L = L;
@@ -83,6 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.toolbar input[type="search"]').forEach((input) => {
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') { e.preventDefault(); input.form?.submit(); }
+    });
+  });
+
+  /* Password show/hide */
+  document.querySelectorAll('[data-pw-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const input = document.getElementById(btn.dataset.pwToggle);
+      if (!input) return;
+      const show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      btn.setAttribute('aria-pressed', show ? 'true' : 'false');
+      btn.setAttribute('aria-label', show ? 'Sembunyikan password' : 'Tampilkan password');
     });
   });
 

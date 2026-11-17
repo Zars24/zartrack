@@ -37,7 +37,13 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="password">Password</label>
-                    <input id="password" type="password" name="password" class="form-control" required autocomplete="current-password" placeholder="••••••••">
+                    <div class="pw-field">
+                        <input id="password" type="password" name="password" class="form-control" required autocomplete="current-password" placeholder="••••••••">
+                        <button type="button" class="pw-toggle" data-pw-toggle="password" aria-label="Tampilkan password" aria-pressed="false">
+                            <x-icon name="eye" size="17" class="pw-toggle__show" />
+                            <x-icon name="eye-off" size="17" class="pw-toggle__hide" />
+                        </button>
+                    </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <div class="form-check">

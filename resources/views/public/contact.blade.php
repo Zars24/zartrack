@@ -1,12 +1,15 @@
 @extends('layouts.base')
 @section('title', 'Kontak & Quote')
+@section('meta_description', 'Kirim permintaan penawaran container trucking, freight forwarding, dan warehousing. Tim operasional merespons dalam 1×24 jam kerja.')
 @section('body')
 @include('public._nav')
-<main class="pub-container" style="padding-top:3.5rem;padding-bottom:3.5rem">
+<main class="pub-container pub-page">
     <div class="row g-4">
         <div class="col-lg-5">
-            <span class="eyebrow-sm">Hubungi Kami</span>
-            <h1 style="font-size:clamp(1.7rem,3vw,2.3rem);margin:.6rem 0 1rem">Minta penawaran pengiriman.</h1>
+            <div class="page-head">
+                <span class="eyebrow-sm">Hubungi Kami</span>
+                <h1>Minta penawaran pengiriman.</h1>
+            </div>
             <p class="lead-sm">Isi formulir, tim operasional menghubungi Anda dalam 1×24 jam kerja. Tidak perlu membuat akun.</p>
 
             <div class="card mt-4">
