@@ -251,7 +251,6 @@ Responsive layout was also checked manually in Chrome at 1440 / 1024 / 900 / 768
 | [docs/BUSINESS_RULES.md](docs/BUSINESS_RULES.md) | Operational rules, status machine, authorization |
 | [docs/SYSTEM_ARCHITECTURE.md](docs/SYSTEM_ARCHITECTURE.md) | Layers, data model, request flow, conventions |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Delivered stages, next steps, non-goals |
-| [docs/AI_AGENT_GUIDE.md](docs/AI_AGENT_GUIDE.md) | Working instructions for AI coding agents |
 | [docs/SETUP.md](docs/SETUP.md) | Install, configure, run, test |
 
 ## Status
